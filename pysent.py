@@ -20,7 +20,9 @@ class Reader: # needs tighter integration and dynamic loading,
         if line.isspace():
           self.presentation.append(self._send_current_page())
           self.page_holder = []
-        self.page_holder.append(line)
+        else:
+          self.page_holder.append(line)
+    self.presentation.append(self._send_current_page())
     return self.presentation
 
 if __name__ == "__main__":
